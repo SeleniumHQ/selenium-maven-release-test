@@ -4,7 +4,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.rosenvold</groupId>
-    <artifactId>smidig2010</artifactId>
+    <artifactId>selenium-release-test</artifactId>
+    <description>A test project that automatically picks up staged versions from oss.sonatype.org</description>
     <packaging>war</packaging>
     <version>1.0</version>
 

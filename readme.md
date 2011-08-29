@@ -4,4 +4,4 @@ mvn jetty:run
 
 mvn -Dselenium.version=2.6.0 test
 
-This project deliberately fails if you do not specify the version to test
+This project deliberately fails if you do not specify the version to test, and it automaticall
