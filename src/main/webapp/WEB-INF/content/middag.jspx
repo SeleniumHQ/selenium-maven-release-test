@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="utf-8"/>
+
+    <html>
+    <head>
+        <title>Velg mat</title>
+    </head>
+    <body>
+    <form method="post" action="middag">
+        <label for="ja">Ja</label><input id="ja" type="radio" name="middag" value="true">Ja</input>
+        <label for="nei">Nei</label><input id="nei" type="radio" name="middag" value="false">Nei</input>
+        <label for="navn">Navn</label> <input id="navn" name="navn" type="text"/><br/>
+        <label for="epost">Epost</label> <input id="epost" name="epost" type="text"/><br/>
+        <label for="email">Email</label> <input id="email" name="email" type="text"/><br/>
+        <label for="name">Name</label> <input id="name" name="name" type="text"/><br/>
+
+        <label for="yes">Yes</label><input id="yes" type="radio" name="beer" value="Yes"/>
+
+        <label for="yes">Yes</label><input id="yes" type="radio" name="beer" value="true"/>
+        <label for="no">No</label><input id="no" type="radio" name="beer" value="false"/>
+        <label for="yes">Yes</label><input id="yes" type="radio" name="beer" value=""/>
+
+        <label for=""></label><input id="" type="radio" name="" value=""/>
+
+        <label for=""></label><input id="" type="radio" name="" value=""/>
+
+
+        s
+        <label for="yes">Ye</label><input id="yes" type="radio" name="beer
+        " value="Ye"/>
+
+        <label for="yes">Yes</label><input id="yes" type="radio" name="beer" value="yes">Yes</input>
+        <label for="no">No</label><input id="no" type="radio" name="beer" value="no">No</input>
+
+        <label for="yes">Yes</label><input id="yes" type="radio" name="beer" value="Yes"/>
+        <label for="no">No</label><input id="no" type="radio" name="beer" value="No"/>
+
+    </form>
+    </body>
+    </html>
+</jsp:root>

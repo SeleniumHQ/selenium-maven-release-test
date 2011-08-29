@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <!-- constant name="struts.objectFactory.spring.autoWire" value="type"/>
+    <constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true"/ -->
+    <constant name="struts.ui.theme" value="simple"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+    <constant name="struts.i18n.reload" value="true"/>
+
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.debug" value="true"/>
+        <constant name="struts.convention.classes.reload" value="true" />
+    <constant name="struts.convention.action.packages" value="org.seleniumhq"/>
+
+    <constant name="struts.xslt.nocache" value="true"/>
+    <constant name="struts.configuration.xml.reload" value="true"/>
+    <constant name="struts.freemarker.templatesCache" value="true"/>
+
+
+    <constant name="struts.convention.exclude.parentClassLoader" value="false"/>
+    <constant name="struts.convention.classLoader.excludeParent" value="false"/>
+    <constant name="struts.convention.action.fileProtocols" value="jar"/>
+    <constant name="struts.convention.action.includeJars" value="true"/>
+
+    <!-- constant name="struts.convention.result.path" value="/WEB-INF/"/ -->
+    <!--constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/-->
+    <!-- These properties are used by struts fileupload -->
+    <constant name="struts.multipart.maxSize" value="10000000" />
+    <constant name="struts.multipart.saveDir" value="." />
+</struts>
