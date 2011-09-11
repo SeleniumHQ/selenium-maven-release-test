@@ -5,7 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.rosenvold</groupId>
     <artifactId>selenium-release-test</artifactId>
-    <description>A test project that automatically picks up staged versions from oss.sonatype.org</description>
+    <description>A test project that automatically picks up staged versions from oss.sonatype.org
+    </description>
     <packaging>war</packaging>
     <version>1.0</version>
 
@@ -135,9 +136,57 @@
             <artifactId>javassist</artifactId>
             <version>3.0</version>
         </dependency>
-
+        <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>r09</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpclient</artifactId>
+          <version>4.1.2</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpcore</artifactId>
+          <version>4.1.3</version>
+        </dependency>
+        <dependency>
+          <groupId>org.json</groupId>
+          <artifactId>json</artifactId>
+          <version>20080701</version>
+        </dependency>
 
     </dependencies>
+    <profiles>
+        <profile>
+            <id>setest2</id>
+            <activation>
+                <file>
+                    <exists>
+                        /home/kristian/lsrc/selenium/build/java/client/src/org/openqa/selenium/client-combined-nodeps.jar
+                    </exists>
+                </file>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-java</artifactId>
+                    <version>${selenium.version}</version>
+                    <scope>system</scope>
+                    <systemPath>
+                        /home/kristian/lsrc/selenium/build/java/client/src/org/openqa/selenium/client-combined-nodeps.jar
+                    </systemPath>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>xerces</groupId>
+                            <artifactId>xercesImpl</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
     <build>
         <pluginManagement>
             <plugins>
@@ -181,7 +230,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
-                    <argLine>-client -Xmx512m -XX:MaxPermSize=192m -Djava.awt.headless=true</argLine>
+                    <argLine>-client -Xmx512m -XX:MaxPermSize=192m -Djava.awt.headless=true
+                    </argLine>
                     <excludes>
                         <exclude>**/**/VelgMiddagActionTest.java</exclude>
                     </excludes>
