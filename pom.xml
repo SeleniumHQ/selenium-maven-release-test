@@ -73,6 +73,22 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20080701</version>
+        </dependency>
+
+        <dependency>
             <groupId>javax.el</groupId>
             <artifactId>el-api</artifactId>
             <version>1.0</version>
@@ -121,6 +137,11 @@
             <version>${struts.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>r09</version>
+        </dependency>
+        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
@@ -143,10 +164,48 @@
             <activation>
                 <file>
                     <exists>
-                        /home/kristian/lsrc/selenium/build/java/client/src/org/openqa/selenium/client-combined-nodeps.jar
+                        /home/kristian/lsrc/selenium/build/java/client/src/org/openqa/selenium/client-client-nodeps.jar
                     </exists>
                 </file>
             </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-java</artifactId>
+                    <version>${selenium.version}</version>
+                    <scope>system</scope>
+                    <systemPath>
+                        /home/kristian/lsrc/selenium/build/java/client/src/org/openqa/selenium/client-combined-nodeps.jar
+                    </systemPath>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>xerces</groupId>
+                            <artifactId>xercesImpl</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>gridtest</id>
+            <build>
+                <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.11</version>
+                    <configuration>
+                        <parallel>classes</parallel>
+                        <threadCount>10</threadCount>
+                        <forkMode>never</forkMode>
+                        <includes>
+                            <include>**/*IT.java</include>
+                        </includes>
+                        <forkMode>once</forkMode>
+                    </configuration>
+                </plugin>
+                </plugins>
+            </build>
             <dependencies>
                 <dependency>
                     <groupId>org.seleniumhq.selenium</groupId>
@@ -198,7 +257,7 @@
                     </webAppConfig>
                     <connectors>
                         <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-                            <port>8080</port>
+                            <port>8083</port>
                         </connector>
                     </connectors>
                     <scanIntervalSeconds>3</scanIntervalSeconds>
@@ -207,7 +266,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.6</version>
+                <version>2.11</version>
                 <configuration>
                     <argLine>-client -Xmx512m -XX:MaxPermSize=192m -Djava.awt.headless=true
                     </argLine>
@@ -229,7 +288,7 @@
         <jetty.version>6.1.19</jetty.version>
         <jetty.api.version>6.1.14</jetty.api.version>
         <struts.version>2.2.3</struts.version>
-        <selenium.version>3.14.0</selenium.version>
+        <selenium.version>2.20.0</selenium.version>
         <!-- Deliberatley incorrect, must be specified on commandline -->
     </properties>
 </project>

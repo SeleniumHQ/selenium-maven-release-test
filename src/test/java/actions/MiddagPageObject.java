@@ -1,5 +1,6 @@
 package actions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import util.PageFactory;
@@ -7,34 +8,42 @@ import util.PageFactory;
 /**
  * @author Kristian Rosenvold
  */
-public class MiddagPageObject {
-  @FindBy(id="ja")
-  WebElement ja;
+public class MiddagPageObject extends PageObject {
 
-  public MiddagPageObject velgJa(){
+    WebElement ja;
+    WebElement navn;
+    WebElement epost;
+    WebElement form;
+
+
+    public MiddagPageObject(PageObjectContext pageObjectContext) {
+        super(pageObjectContext);
+        this.ja = findElement(By.id("ja"));
+        this.navn = findElement(By.id("navn"));
+        this.epost = findElement(By.id("epost"));
+        this.form = findElement(By.tagName("form"));
+    }
+
+
+    public MiddagPageObject velgJa(){
       ja.click( );
       return this;
   }
 
-  WebElement navn;
 
   public MiddagPageObject skrivNavn(String navn){
       this.navn.sendKeys( navn);
       return this;
   }
 
-  WebElement epost;
-
   public MiddagPageObject skrivEpost(String epost){
       this.epost.sendKeys( epost);
       return this;
   }
 
-  @FindBy(tagName = "form")
-  WebElement form;
   public KvitteringPageObject sendInn() {
     form.submit();
-       return PageFactory.createPageObject( KvitteringPageObject.class );
+      return new KvitteringPageObject(getPageObjectContext());
 
   }
 }

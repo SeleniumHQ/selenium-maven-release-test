@@ -20,12 +20,12 @@ public class EmbeddedJettyStarter
 {
 
     public static void start(){
-        new EmbeddedJettyStarter().startJettyWithDefaultServlets("/", 8080);
+        new EmbeddedJettyStarter().startJettyWithDefaultServlets("/", 8083);
     }
 
 
     public static void main(String[] args) {
-        new EmbeddedJettyStarter().startJettyWithDefaultServlets("/", 8080);
+        new EmbeddedJettyStarter().startJettyWithDefaultServlets("/", 8083);
     }
 
 

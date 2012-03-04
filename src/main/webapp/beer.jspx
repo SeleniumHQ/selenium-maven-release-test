@@ -11,11 +11,13 @@
         <title>Beer</title>
     </head>
     <body>
-    <form method="post" action="Beer" id="fud">
+    <form method="post" action="beer-confirm.jspx" id="fud">
         <label for="yes">Yes</label><input id="yes" type="radio" name="beer" value="true"/>
         <label for="no">No</label><input id="no" type="radio" name="beer" value="false"/>
         <label for="email">Email</label> <input id="email" name="email" type="text"/><br/>
         <label for="name">Name</label> <input id="name" name="name" type="text"/><br/>
+        <input type="submit" id="go"/>
+
     </form>
     </body>
     </html>

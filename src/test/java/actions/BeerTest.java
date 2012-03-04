@@ -18,14 +18,8 @@ public class BeerTest
     @Test
     public void testBeer()
     {
-        BeerPageObject start = getStartSide();
+        BeerPageObject start = CommonTest.getStartSide(webDriver);
         start.enterName("Kristian Rosenvold").enterEmail("kristian.rosenvold@gmail.com").selectBeer();
-    }
-
-    private BeerPageObject getStartSide()
-    {
-        webDriver.get( "http://localhost:8080/beer");
-        return PageFactory.createPageObject( webDriver, BeerPageObject.class );
     }
 
     @After
@@ -38,7 +32,7 @@ public class BeerTest
     {
         public static void main( String[] args )
         {
-            new EmbeddedJettyStarter().startJettyWithDefaultServlets( "/", 8080 );
+            new EmbeddedJettyStarter().startJettyWithDefaultServlets( "/", 8083 );
         }
     }
 }
