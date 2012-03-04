@@ -10,56 +10,19 @@ import org.openqa.selenium.support.FindBy;
 public class BeerConfirmPageObject extends PageObject
 {
 
-    WebElement kvittering;
+    WebElement beer;
 
-    WebElement name;
-    WebElement email;
-
-    WebElement yes;
-
-    WebElement fud;
-
-    WebElement no;
 
     public BeerConfirmPageObject(PageObjectContext pageObjectContext) {
         super(pageObjectContext);
-        this.kvittering = findElement(By.id("kvittering"));
-        this.email = findElement(By.id("email"));
-        this.name = findElement(By.id("name"));
-        this.yes = findElement(By.id("yes"));
-        this.no = findElement(By.id("no"));
+        this.beer = findElement(By.id("beer"));
     }
 
 
-    public BeerConfirmPageObject enterName(String name){
-        this.name.sendKeys( name );
-        return this;
-    }
-
-
-    public BeerConfirmPageObject enterEmail(String email){
-        this.email.sendKeys( email );
-        return this;
-    }
-
-
-    public BeerConfirmPageObject velgYes(){
-        yes.click();
-        return this;
-    }
-
-    public BeerConfirmPageObject velgNo(){
-        no.click();
-        return this;
-    }
-
-    public BeerConfirmPageObject selectBeer()
+    public BeerPageObject goBackToBeer()
     {
-        velgYes();
-        return this;
+        beer.click();
+        return new BeerPageObject(getPageObjectContext());
     }
 
-    public void submit(){
-        fud.submit();
-    }
 }

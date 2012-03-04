@@ -109,6 +109,7 @@ public class CommonITBeer {
         BeerPageObject start = CommonTest.getStartSide(webDriver.get());
         CommonTest.runStdScript(start);
     }
+
     @AfterClass
     public static void closeDriver(){
         webDriver.get().quit();

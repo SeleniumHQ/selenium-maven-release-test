@@ -197,6 +197,7 @@
                     <configuration>
                         <parallel>classes</parallel>
                         <threadCount>10</threadCount>
+                        <perCoreThreadCount>false</perCoreThreadCount>
                         <forkMode>never</forkMode>
                         <includes>
                             <include>**/*IT.java</include>
