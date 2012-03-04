@@ -23,7 +23,7 @@ public class BeerPageObject extends PageObject
 
     public BeerPageObject(PageObjectContext pageObjectContext) {
         super(pageObjectContext);
-        this.name = findElement(By.id("name"));
+        this.name = waitForElement(By.id("name"));
         this.yes = findElement(By.id("yes"));
         this.no = findElement(By.id("no"));
         this.fud = findElement(By.id("fud"));

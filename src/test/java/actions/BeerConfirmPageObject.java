@@ -15,7 +15,7 @@ public class BeerConfirmPageObject extends PageObject
 
     public BeerConfirmPageObject(PageObjectContext pageObjectContext) {
         super(pageObjectContext);
-        this.beer = findElement(By.id("beer"));
+        this.beer = waitForElement(By.id("beer"));
     }
 
 
