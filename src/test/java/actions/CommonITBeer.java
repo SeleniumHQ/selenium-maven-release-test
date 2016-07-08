@@ -1,6 +1,5 @@
 package actions;
 
-import com.sun.servicetag.SystemEnvironment;
 import org.junit.AfterClass;
 import org.junit.Test;
 import org.openqa.selenium.Capabilities;

@@ -14,7 +14,7 @@ public class CommonTest {
 
     public static  BeerPageObject getStartSide(WebDriver webDriver)
     {
-        webDriver.get( "http://office:8083/beer.jspx");
+        webDriver.get( "http://localhost:8083/beer.jspx");
         return new BeerPageObject(new PageObjectContext(webDriver));
     }
 

@@ -4,7 +4,10 @@ import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import util.*;
+
+import java.util.HashMap;
 
 import static junit.framework.Assert.*;
 
@@ -13,7 +16,10 @@ import static junit.framework.Assert.*;
  */
 public class BeerTest
 {
-    WebDriver webDriver = new FirefoxDriver();
+    WebDriver webDriver = new FirefoxDriver(new DesiredCapabilities(new HashMap<String, Object>(){{
+        this.put("browserName", "firefox");
+        this.put("marionette", false);
+    }}));
 
     @Test
     public void testBeer()
@@ -26,13 +32,5 @@ public class BeerTest
     public void quit()
     {
         webDriver.quit();
-    }
-
-    static class JettyStart
-    {
-        public static void main( String[] args )
-        {
-            new EmbeddedJettyStarter().startJettyWithDefaultServlets( "/", 8083 );
-        }
     }
 }

@@ -33,9 +33,8 @@ public class Se1Se2ServerTest {
   @Ignore
   public void testWebDriverSomething() throws MalformedURLException {
     WebDriver webDriver = new RemoteWebDriver(new URL("http://localhost:4444//wd/hub"), DesiredCapabilities.firefox());
-      webDriver.get("http://www.google.com");
+    webDriver.get("http://www.google.com");
     webDriver.findElement(By.name("q")).sendKeys("webdriver");
-    webDriver.close();
     webDriver.quit();
   }
 }

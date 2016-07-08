@@ -4,7 +4,10 @@ import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import util.*;
+
+import java.util.HashMap;
 
 import static junit.framework.Assert.*;
 
@@ -12,7 +15,10 @@ import static junit.framework.Assert.*;
  * @author Kristian Rosenvold
  */
 public class MiddagTest {
-    WebDriver webDriver = new FirefoxDriver();
+    WebDriver webDriver = new FirefoxDriver(new DesiredCapabilities(new HashMap<String, Object>(){{
+        this.put("browserName", "firefox");
+        this.put("marionette", false);
+    }}));
 
     @Test
     public void testMiddag() {
