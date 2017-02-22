@@ -3,8 +3,7 @@ package actions;
 import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.chrome.ChromeDriver;
 import util.*;
 
 import java.util.HashMap;
@@ -16,10 +15,7 @@ import static junit.framework.Assert.*;
  */
 public class BeerTest
 {
-    WebDriver webDriver = new FirefoxDriver(new DesiredCapabilities(new HashMap<String, Object>(){{
-        this.put("browserName", "firefox");
-        this.put("marionette", false);
-    }}));
+    WebDriver webDriver = new ChromeDriver();
 
     @Test
     public void testBeer()
